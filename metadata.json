@@ -1,0 +1,10 @@
+{
+  "name": "YAD-AL PHARMACY TRADING COMPANY",
+  "description": "The official modern website and healthcare portal for YAD-AL PHARMACY TRADING COMPANY, 29 Wilberforce Street, Freetown, Sierra Leone. Phone: 078386123 / 033327227.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

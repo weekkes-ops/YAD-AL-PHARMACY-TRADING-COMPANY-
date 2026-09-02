@@ -1,0 +1,161 @@
+{
+  "entities": {
+    "medications": {
+      "title": "Medication",
+      "description": "Information about drugs available in the pharmacy.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "genericName": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "stockLevel": { "type": "integer" },
+        "unit": { "type": "string", "enum": ["tablets", "capsules", "bottles", "tubes", "vials"] },
+        "expiryDate": { "type": "string", "format": "date-time" },
+        "manufacturer": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "category", "price", "stockLevel"]
+    },
+    "sales": {
+      "title": "Sale",
+      "description": "Records of medication sales transactions.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerId": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "medicationId": { "type": "string" },
+              "name": { "type": "string" },
+              "genericName": { "type": "string" },
+              "manufacturer": { "type": "string" },
+              "quantity": { "type": "integer" },
+              "price": { "type": "number" }
+            }
+          }
+        },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string", "enum": ["cash", "card", "mobile_money"] },
+        "soldBy": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["items", "totalAmount", "paymentMethod", "timestamp"]
+    },
+    "customers": {
+      "title": "Customer",
+      "description": "Patient/Customer records for medical history.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "medicalHistory": { "type": "string" },
+        "allergies": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "consultations": {
+      "title": "Consultation",
+      "description": "AI-powered health consultation logs.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": { "type": "string", "enum": ["user", "assistant"] },
+              "content": { "type": "string" },
+              "timestamp": { "type": "string", "format": "date-time" }
+            }
+          }
+        },
+        "summary": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "staff": {
+      "title": "Staff",
+      "description": "Pharmacy staff profiles and roles.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "pharmacist", "cashier", "manager", "technician", "viewer"] },
+        "isVerified": { "type": "boolean" }
+      }
+    },
+    "stockLogs": {
+      "title": "Stock Log",
+      "description": "Historical record of all stock adjustments.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "medicationId": { "type": "string" },
+        "medicationName": { "type": "string" },
+        "change": { "type": "integer" },
+        "reason": { "type": "string", "enum": ["manual", "restock", "sale", "return", "initial"] },
+        "performedBy": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["medicationId", "change", "reason", "performedBy", "timestamp"]
+    },
+    "activities": {
+      "title": "Staff Activity",
+      "description": "Historical audit of staff actions and operations.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "staffId": { "type": "string" },
+        "staffName": { "type": "string" },
+        "action": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "details": { "type": "object" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["staffId", "action", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/medications/{medicationId}": {
+      "schema": "medications",
+      "description": "Inventory of drugs."
+    },
+    "/sales/{saleId}": {
+      "schema": "sales",
+      "description": "Sales transactions."
+    },
+    "/customers/{customerId}": {
+      "schema": "customers",
+      "description": "Customer/Patient profiles."
+    },
+    "/consultations/{consultationId}": {
+      "schema": "consultations",
+      "description": "AI Consultation history."
+    },
+    "/staff/{staffId}": {
+      "schema": "staff",
+      "description": "Staff account info."
+    },
+    "/stockLogs/{logId}": {
+      "schema": "stockLogs",
+      "description": "History of stock adjustments."
+    },
+    "/activities/{activityId}": {
+      "schema": "activities",
+      "description": "Audit trail of staff actions."
+    }
+  }
+}
