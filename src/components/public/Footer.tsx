@@ -201,7 +201,7 @@ export function Footer({
                   className="w-full py-2.5 px-3 rounded-xl bg-white/10 hover:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 border border-white/10"
                 >
                   <LogIn size={13} className="text-emerald-400" />
-                  <span>Hospital / Staff Management Portal</span>
+                  <span>SUSSEX PHARMCY Management Portal</span>
                 </button>
               </div>
             </div>

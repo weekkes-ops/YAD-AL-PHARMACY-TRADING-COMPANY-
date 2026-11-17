@@ -164,7 +164,7 @@ export function ServicesSection({ onOpenBooking, onOpenPrescription }: ServicesS
               <span>24/7 Dispensary &amp; Hospital On-Call</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-white">
-              Have an urgent medication request in Bo tonight?
+              Have an urgent medication request in Freetown tonight?
             </h3>
             <p className="text-sm text-gray-300 max-w-xl">
               Our licensed clinical pharmacists are on standby for hospital referrals, critical antibiotics, and emergency supplies.
@@ -180,7 +180,7 @@ export function ServicesSection({ onOpenBooking, onOpenPrescription }: ServicesS
               <span>Call {PHARMACY_CONFIG.emergencyPhone}</span>
             </a>
             <a
-              href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=EMERGENCY%20REQUEST%3A%20I%20urgently%20need%20medication%20in%20Bo.`}
+              href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=EMERGENCY%20REQUEST%3A%20I%20urgently%20need%20medication%20in%20Freetown.`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3.5 rounded-2xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 border border-emerald-400/30 font-bold text-sm transition-all"

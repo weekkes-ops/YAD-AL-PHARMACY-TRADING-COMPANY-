@@ -47,7 +47,7 @@ export function AppointmentBooking({ initialService, onSuccessToast }: Appointme
     if (!patientName || !patientPhone) return;
 
     setIsSubmitting(true);
-    const appointmentId = `APT-YAD-${Math.floor(10000 + Math.random() * 90000)}`;
+    const appointmentId = `APT-SSX-${Math.floor(10000 + Math.random() * 90000)}`;
 
     const newAppointment: ClinicAppointment = {
       id: appointmentId,
@@ -71,8 +71,8 @@ export function AppointmentBooking({ initialService, onSuccessToast }: Appointme
     }
 
     try {
-      const stored = JSON.parse(localStorage.getItem('yadal_appointments') || '[]');
-      localStorage.setItem('yadal_appointments', JSON.stringify([newAppointment, ...stored]));
+      const stored = JSON.parse(localStorage.getItem('sussex_appointments') || '[]');
+      localStorage.setItem('sussex_appointments', JSON.stringify([newAppointment, ...stored]));
     } catch (e) {
       console.warn(e);
     }

@@ -23,7 +23,7 @@ interface PublicWebsiteProps {
 export function PublicWebsite({ onOpenPortal }: PublicWebsiteProps) {
   const [cart, setCart] = useState<PublicCartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('yadal_cart');
+      const saved = localStorage.getItem('sussex_cart');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -40,7 +40,7 @@ export function PublicWebsite({ onOpenPortal }: PublicWebsiteProps) {
   const saveCart = (newCart: PublicCartItem[]) => {
     setCart(newCart);
     try {
-      localStorage.setItem('yadal_cart', JSON.stringify(newCart));
+      localStorage.setItem('sussex_cart', JSON.stringify(newCart));
     } catch (e) {
       console.warn(e);
     }
@@ -156,7 +156,7 @@ export function PublicWebsite({ onOpenPortal }: PublicWebsiteProps) {
           onSuccessToast={showToast}
         />
 
-        {/* 7. Bo Location, Hours & Directions */}
+        {/* 7. Freetown Location, Hours & Directions */}
         <LocationContact />
 
         {/* 8. Health Articles & FAQ */}
@@ -197,7 +197,7 @@ export function PublicWebsite({ onOpenPortal }: PublicWebsiteProps) {
       {/* Floating Action Buttons (WhatsApp & Quick Call) */}
       <aside aria-label="Quick contact actions" className="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
         <a
-          href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%20YAD-AL%20PHARMACY%20TRADING%20COMPANY%2C%20I%20have%20an%20inquiry.`}
+          href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%20SUSSEX%20PHARMCY%20Freetown%20Sierra%20Leone%2C%20I%20have%20an%20inquiry.`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-13 h-13 rounded-full bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white flex items-center justify-center shadow-2xl shadow-emerald-900/30 transition-transform cursor-pointer group"

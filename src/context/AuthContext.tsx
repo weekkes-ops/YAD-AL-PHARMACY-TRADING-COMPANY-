@@ -16,7 +16,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const LOCAL_SESSION_KEY = 'yadal_pharmacy_staff_session';
+const LOCAL_SESSION_KEY = 'sussex_pharmacy_staff_session';
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);

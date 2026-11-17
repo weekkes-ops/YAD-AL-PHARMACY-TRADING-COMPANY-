@@ -233,7 +233,7 @@ export function MedicineCatalog({
                 href={`tel:${PHARMACY_CONFIG.primaryPhone}`}
                 className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold"
               >
-                Call Bo Dispensary
+                Call Freetown Dispensary
               </a>
             </div>
           </div>
@@ -438,7 +438,7 @@ export function MedicineCatalog({
                     </button>
 
                     <a
-                      href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%2C%20I%20would%20like%20to%20order%20${modalQuantity}x%20${encodeURIComponent(selectedMedModal.name)}%20from%20YAD-AL%20PHARMACY%20TRADING%20COMPANY.`}
+                      href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%2C%20I%20would%20like%20to%20order%20${modalQuantity}x%20${encodeURIComponent(selectedMedModal.name)}%20from%20SUSSEX%20PHARMCY%20Freetown%20Sierra%20Leone.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3.5 rounded-xl bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 transition-colors"

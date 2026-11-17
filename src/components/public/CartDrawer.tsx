@@ -59,7 +59,7 @@ export function CartDrawer({
     if (!customerName || !customerPhone || cart.length === 0) return;
 
     setIsSubmitting(true);
-    const orderId = `ORD-YAD-${Math.floor(100000 + Math.random() * 900000)}`;
+    const orderId = `ORD-SSX-${Math.floor(100000 + Math.random() * 900000)}`;
 
     const newOrder: OnlineOrder = {
       id: orderId,
@@ -90,8 +90,8 @@ export function CartDrawer({
     }
 
     try {
-      const stored = JSON.parse(localStorage.getItem('yadal_orders') || '[]');
-      localStorage.setItem('yadal_orders', JSON.stringify([newOrder, ...stored]));
+      const stored = JSON.parse(localStorage.getItem('sussex_orders') || '[]');
+      localStorage.setItem('sussex_orders', JSON.stringify([newOrder, ...stored]));
     } catch (e) {
       console.warn(e);
     }
@@ -104,7 +104,7 @@ export function CartDrawer({
 
   const generateWhatsAppOrderText = (order: OnlineOrder) => {
     const itemsText = order.items.map((i) => `• ${i.quantity}x ${i.name} (NLe ${(i.price * i.quantity).toFixed(2)})`).join('%0A');
-    return `Hello%20YAD-AL%20PHARMACY%20TRADING%20COMPANY%2C%0A%0AI%20have%20placed%20order%20Ref%3A%20${order.id}%0A%0A*Customer%20Name%3A*%20${encodeURIComponent(order.customerName)}%0A*Phone%3A*%20${order.customerPhone}%0A*Delivery%3A*%20${order.deliveryType === 'delivery' ? `Delivery%20to%20${encodeURIComponent(order.customerAddress)}` : 'In-Store%20Pickup%20(29%20Wilberforce%20St)'}%0A*Payment%3A*%20${order.paymentMethod}%0A%0A*Items%3A*%0A${itemsText}%0A%0A*Total%3A*%20NLe%20${order.totalAmount.toFixed(2)}`;
+    return `Hello%20SUSSEX%20PHARMCY%20Freetown%20Sierra%20Leone%2C%0A%0AI%20have%20placed%20order%20Ref%3A%20${order.id}%0A%0A*Customer%20Name%3A*%20${encodeURIComponent(order.customerName)}%0A*Phone%3A*%20${order.customerPhone}%0A*Delivery%3A*%20${order.deliveryType === 'delivery' ? `Delivery%20to%20${encodeURIComponent(order.customerAddress)}` : 'In-Store%20Pickup%20(29%20Wilberforce%20St)'}%0A*Payment%3A*%20${order.paymentMethod}%0A%0A*Items%3A*%0A${itemsText}%0A%0A*Total%3A*%20NLe%20${order.totalAmount.toFixed(2)}`;
   };
 
   if (!isOpen) return null;
@@ -364,7 +364,7 @@ export function CartDrawer({
                   </div>
                   {deliveryType === 'delivery' && (
                     <div className="flex items-center justify-between">
-                      <span>Delivery Fee (Bo):</span>
+                      <span>Delivery Fee (Freetown):</span>
                       <span className="font-mono font-bold text-gray-900">NLe {deliveryFee.toFixed(2)}</span>
                     </div>
                   )}

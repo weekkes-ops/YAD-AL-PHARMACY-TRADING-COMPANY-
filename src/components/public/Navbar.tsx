@@ -74,7 +74,7 @@ export function Navbar({
             </a>
             <span className="text-emerald-700">|</span>
             <a
-              href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%20YAD-AL%20PHARMACY%20TRADING%20COMPANY%2C%20I%20have%20an%20inquiry%20regarding%20medications.`}
+              href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%20SUSSEX%20PHARMCY%20Freetown%20Sierra%20Leone%2C%20I%20have%20an%20inquiry%20regarding%20medications.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-emerald-300 hover:text-white transition-colors"
@@ -153,7 +153,7 @@ export function Navbar({
             onClick={() => handleNavClick('location')}
             className="hover:text-emerald-600 transition-colors cursor-pointer"
           >
-            Bo Clinic
+            Freetown Clinic
           </button>
         </nav>
 

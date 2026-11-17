@@ -66,7 +66,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
     setIsSubmitting(true);
     setErrorMessage(null);
 
-    const generatedRefId = `RX-BO-${Math.floor(100000 + Math.random() * 900000)}`;
+    const generatedRefId = `RX-SSX-${Math.floor(100000 + Math.random() * 900000)}`;
 
     const newPrescription: PrescriptionSubmission = {
       id: generatedRefId,
@@ -95,8 +95,8 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
 
     // Save in localStorage for immediate client-side tracking
     try {
-      const existing = JSON.parse(localStorage.getItem('yadal_prescriptions') || '[]');
-      localStorage.setItem('yadal_prescriptions', JSON.stringify([newPrescription, ...existing]));
+      const existing = JSON.parse(localStorage.getItem('sussex_prescriptions') || '[]');
+      localStorage.setItem('sussex_prescriptions', JSON.stringify([newPrescription, ...existing]));
     } catch (e) {
       console.warn('LocalStorage save notice:', e);
     }
@@ -120,7 +120,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
 
     // Check local storage first
     try {
-      const localList: PrescriptionSubmission[] = JSON.parse(localStorage.getItem('yadal_prescriptions') || '[]');
+      const localList: PrescriptionSubmission[] = JSON.parse(localStorage.getItem('sussex_prescriptions') || '[]');
       const foundLocal = localList.find((p) => p.id?.toUpperCase() === cleanId || p.patientPhone === cleanId);
       if (foundLocal) {
         setTrackingResult(foundLocal);
@@ -141,7 +141,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
         setTrackingError(`No prescription record found for "${cleanId}". Please check your Reference # or Phone Number.`);
       }
     } catch (err: any) {
-      setTrackingError('Unable to check status right now. Please call Bo Dispensary at ' + PHARMACY_CONFIG.primaryPhone);
+      setTrackingError('Unable to check status right now. Please call Freetown Dispensary at ' + PHARMACY_CONFIG.primaryPhone);
     } finally {
       setIsTracking(false);
     }
@@ -160,7 +160,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
             Prescription Upload &amp; Refill Request
           </h2>
           <p className="text-sm sm:text-base text-gray-600">
-            Snap a photo of your doctor’s prescription slip. Our clinical pharmacists in Bo will verify the dosage, prepare your medicine, and notify you when ready.
+            Snap a photo of your doctor’s prescription slip. Our clinical pharmacists in Freetown will verify the dosage, prepare your medicine, and notify you when ready.
           </p>
 
           {/* Toggle between Upload and Track */}
@@ -352,7 +352,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
                         type="text"
                         value={doctorName}
                         onChange={(e) => setDoctorName(e.target.value)}
-                        placeholder="e.g. Dr. Sesay (Bo Govt Hospital)"
+                        placeholder="e.g. Dr. Sesay (Connaught Hospital, Freetown)"
                         className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-emerald-500"
                       />
                     </div>
@@ -390,7 +390,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
                         }`}
                       >
                         <div>
-                          <div>Bo Town Delivery</div>
+                          <div>Freetown Delivery</div>
                           <div className="text-[10px] text-gray-500 font-normal">Direct to Home/Office</div>
                         </div>
                         {deliveryType === 'delivery' && <CheckCircle2 size={16} className="text-emerald-600" />}
@@ -401,14 +401,14 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
                   {deliveryType === 'delivery' && (
                     <div>
                       <label className="text-xs font-bold text-gray-700 block mb-1.5">
-                        Delivery Address in Bo *
+                        Delivery Address in Freetown *
                       </label>
                       <input
                         type="text"
                         required
                         value={deliveryAddress}
                         onChange={(e) => setDeliveryAddress(e.target.value)}
-                        placeholder="e.g. Near Clock Tower, Tikonko Road, Bo"
+                        placeholder="e.g. Near Cotton Tree, Siaka Stevens St, Freetown"
                         className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-emerald-500"
                       />
                     </div>
@@ -467,7 +467,7 @@ export function PrescriptionUpload({ onSuccessToast }: PrescriptionUploadProps) 
                   type="text"
                   value={trackingIdInput}
                   onChange={(e) => setTrackingIdInput(e.target.value)}
-                  placeholder="e.g. RX-YAD-849201 or 078386123"
+                  placeholder="e.g. RX-SSX-849201 or 078386123"
                   className="flex-1 bg-white border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:border-emerald-500 font-mono"
                 />
                 <button

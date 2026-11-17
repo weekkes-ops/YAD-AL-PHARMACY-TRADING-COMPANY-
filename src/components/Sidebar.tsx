@@ -60,8 +60,8 @@ export function Sidebar({ activeTab, setActiveTab, onSwitchToPublic }: SidebarPr
             >
               <PharmacyLogo size="sm" />
               <div className="flex flex-col truncate">
-                <span className="font-black text-xs uppercase tracking-wider text-emerald-400 truncate">YAD-AL</span>
-                <span className="text-[9px] text-gray-400 font-semibold tracking-tighter truncate">Pharmacy Trading Co.</span>
+                <span className="font-black text-xs uppercase tracking-wider text-emerald-400 truncate">SUSSEX PHARMCY</span>
+                <span className="text-[9px] text-gray-400 font-semibold tracking-tighter truncate">Freetown, Sierra Leone</span>
               </div>
             </motion.div>
           )}

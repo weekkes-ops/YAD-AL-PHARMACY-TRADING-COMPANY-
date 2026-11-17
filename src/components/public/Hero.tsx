@@ -162,7 +162,7 @@ export function Hero({
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                <span>Bo Delivery &amp; Pickup</span>
+                <span>Freetown Delivery &amp; Pickup</span>
               </div>
             </div>
           </div>
@@ -239,12 +239,12 @@ export function Hero({
                   <Truck size={20} />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-gray-900">Direct Prescription Delivery in Bo</h4>
+                  <h4 className="text-xs font-bold text-gray-900">Direct Prescription Delivery in Freetown</h4>
                   <p className="text-[11px] text-gray-500">Need medicines brought to your door? Order via phone or online.</p>
                 </div>
               </div>
               <a
-                href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%2C%20I%20would%20like%20to%20order%20medications%20for%20delivery%20in%20Bo.`}
+                href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%2C%20I%20would%20like%20to%20order%20medications%20for%20delivery%20in%20Freetown.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shrink-0 transition-colors"

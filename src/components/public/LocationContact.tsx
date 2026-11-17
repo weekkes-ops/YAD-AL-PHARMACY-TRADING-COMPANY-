@@ -83,7 +83,7 @@ export function LocationContact() {
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">WhatsApp Support &amp; Orders</span>
                   <div className="mt-1">
                     <a
-                      href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%20YAD-AL%20PHARMACY%20TRADING%20COMPANY%2C%20I%20have%20an%20inquiry.`}
+                      href={`https://wa.me/${PHARMACY_CONFIG.whatsappNumber}?text=Hello%20SUSSEX%20PHARMCY%20Freetown%20Sierra%20Leone%2C%20I%20have%20an%20inquiry.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-800"

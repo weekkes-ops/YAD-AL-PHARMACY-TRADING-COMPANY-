@@ -117,7 +117,7 @@ export function StaffLoginModal({ isOpen, onClose, onSuccess }: StaffLoginModalP
           <div>
             <h2 className="text-xl font-black text-white">Staff Management Portal</h2>
             <p className="text-xs text-emerald-400 font-semibold mt-0.5">
-              YAD-AL PHARMACY TRADING COMPANY &bull; Freetown
+              SUSSEX PHARMCY Freetown Sierra Leone
             </p>
           </div>
         </div>
@@ -240,7 +240,7 @@ export function StaffLoginModal({ isOpen, onClose, onSuccess }: StaffLoginModalP
 
               <button
                 type="button"
-                onClick={() => handlePresetLogin('Lead Pharmacist', 'pharmacist@yadal.sl', StaffRole.PHARMACIST)}
+                onClick={() => handlePresetLogin('Lead Pharmacist', 'pharmacist@sussexpharmcy.sl', StaffRole.PHARMACIST)}
                 disabled={isLoggingIn}
                 className="p-3 bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-xl text-left transition-all"
               >
@@ -253,7 +253,7 @@ export function StaffLoginModal({ isOpen, onClose, onSuccess }: StaffLoginModalP
 
               <button
                 type="button"
-                onClick={() => handlePresetLogin('POS Cashier', 'cashier@yadal.sl', StaffRole.CASHIER)}
+                onClick={() => handlePresetLogin('POS Cashier', 'cashier@sussexpharmcy.sl', StaffRole.CASHIER)}
                 disabled={isLoggingIn}
                 className="p-3 bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-xl text-left transition-all"
               >
@@ -266,7 +266,7 @@ export function StaffLoginModal({ isOpen, onClose, onSuccess }: StaffLoginModalP
 
               <button
                 type="button"
-                onClick={() => handlePresetLogin('Store Manager', 'manager@yadal.sl', StaffRole.MANAGER)}
+                onClick={() => handlePresetLogin('Store Manager', 'manager@sussexpharmcy.sl', StaffRole.MANAGER)}
                 disabled={isLoggingIn}
                 className="p-3 bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-xl text-left transition-all"
               >
@@ -329,7 +329,7 @@ export function StaffLoginModal({ isOpen, onClose, onSuccess }: StaffLoginModalP
 
         <div className="mt-5 pt-4 border-t border-gray-800 text-center text-[11px] text-gray-500 flex items-center justify-center gap-1">
           <ShieldCheck size={12} className="text-emerald-500" />
-          <span>YAD-AL PHARMACY TRADING COMPANY &bull; Clinical &amp; Inventory Management</span>
+          <span>SUSSEX PHARMCY Freetown Sierra Leone &bull; System Management</span>
         </div>
       </motion.div>
     </div>

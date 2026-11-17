@@ -39,7 +39,7 @@ function Header({
   return (
     <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 sm:px-8">
       <div className="flex items-center space-x-2 text-sm">
-        <span className="text-gray-400 capitalize">Hospital Portal</span>
+        <span className="text-gray-400 capitalize">SUSSEX PHARMCY Management</span>
         <ChevronRight size={14} className="text-gray-300" />
         <span className="font-bold text-gray-900 capitalize">{activeTab}</span>
       </div>
@@ -90,7 +90,7 @@ function Main() {
         <div className="flex flex-col items-center space-y-4">
           <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin" />
           <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-            Loading YAD-AL PHARMACY TRADING COMPANY...
+            Loading SUSSEX PHARMCY Freetown Sierra Leone...
           </p>
         </div>
       </div>
@@ -134,7 +134,7 @@ function Main() {
             <div>
               <h1 className="text-2xl font-black tracking-tight text-white">{PHARMACY_CONFIG.name}</h1>
               <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mt-1">
-                Hospital &amp; Clinical Management
+                Pharmacy &amp; System Management
               </p>
             </div>
           </div>
@@ -160,7 +160,7 @@ function Main() {
 
               <button
                 type="button"
-                onClick={() => loginAsStaff('pharmacist@yadal.sl', 'Lead Pharmacist', StaffRole.PHARMACIST)}
+                onClick={() => loginAsStaff('pharmacist@sussexpharmcy.sl', 'Lead Pharmacist', StaffRole.PHARMACIST)}
                 className="p-3 bg-gray-900/90 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 rounded-xl text-left transition-all flex flex-col group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
@@ -172,7 +172,7 @@ function Main() {
 
               <button
                 type="button"
-                onClick={() => loginAsStaff('cashier@yadal.sl', 'POS Cashier', StaffRole.CASHIER)}
+                onClick={() => loginAsStaff('cashier@sussexpharmcy.sl', 'POS Cashier', StaffRole.CASHIER)}
                 className="p-3 bg-gray-900/90 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 rounded-xl text-left transition-all flex flex-col group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">
@@ -184,7 +184,7 @@ function Main() {
 
               <button
                 type="button"
-                onClick={() => loginAsStaff('manager@yadal.sl', 'Pharmacy Manager', StaffRole.MANAGER)}
+                onClick={() => loginAsStaff('manager@sussexpharmcy.sl', 'Pharmacy Manager', StaffRole.MANAGER)}
                 className="p-3 bg-gray-900/90 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 rounded-xl text-left transition-all flex flex-col group cursor-pointer"
               >
                 <div className="flex items-center justify-between w-full">

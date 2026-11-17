@@ -118,7 +118,7 @@ export function PublicConsultation({ onOpenBooking }: PublicConsultationProps) {
               </div>
               <div>
                 <h3 className="font-bold text-sm text-white flex items-center gap-1.5">
-                  <span>YAD-AL AI Health Advisor</span>
+                  <span>SUSSEX PHARMCY AI Health Advisor</span>
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 </h3>
                 <p className="text-[10px] text-teal-200">Freetown &amp; Sierra Leone Health Context Aware &bull; Free &amp; Confidential</p>

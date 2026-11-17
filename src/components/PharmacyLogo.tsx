@@ -48,8 +48,8 @@ export function PharmacyLogo({ size = 'md', className = '', showText = false }: 
 
       {showText && (
         <div className="flex flex-col">
-          <span className="font-black text-sm uppercase tracking-wider text-emerald-400">YAD-AL</span>
-          <span className="text-[10px] text-gray-400 font-semibold tracking-tighter">Pharmacy Trading Co.</span>
+          <span className="font-black text-sm uppercase tracking-wider text-emerald-400">SUSSEX PHARMCY</span>
+          <span className="text-[10px] text-gray-400 font-semibold tracking-tighter">Freetown, Sierra Leone</span>
         </div>
       )}
     </div>

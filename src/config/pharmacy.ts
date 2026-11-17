@@ -1,7 +1,7 @@
 export const PHARMACY_CONFIG = {
-  name: 'YAD-AL PHARMACY TRADING COMPANY',
-  shortName: 'YAD-AL Pharmacy',
-  tagline: 'Freetown\'s Trusted Clinical Pharmacy & Healthcare Trading Partner',
+  name: 'SUSSEX PHARMCY Freetown Sierra Leone',
+  shortName: 'SUSSEX PHARMCY',
+  tagline: 'Freetown\'s Trusted Clinical Pharmacy & Healthcare Management Partner',
   address: '29 Wilberforce Street, Freetown',
   city: 'Freetown',
   district: 'Western Area Urban',
@@ -13,7 +13,7 @@ export const PHARMACY_CONFIG = {
   emergencyPhone: '078386123',
   whatsappNumber: '23278386123',
   whatsappDisplay: '+232 78 386123',
-  email: 'info@yadalpharmacy.sl',
+  email: 'info@sussexpharmcy.sl',
   openingHours: {
     weekdays: '7:30 AM - 10:00 PM',
     saturday: '8:00 AM - 10:00 PM',

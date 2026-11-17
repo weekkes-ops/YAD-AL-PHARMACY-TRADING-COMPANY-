@@ -3,7 +3,7 @@ import { db } from './firebase';
 import { StaffActivity, ActivityAction } from '../types';
 import { parseFirestoreDate } from './dateUtils';
 
-const LOCAL_ACTIVITIES_KEY = 'yadal_pharmacy_staff_activities';
+const LOCAL_ACTIVITIES_KEY = 'sussex_pharmacy_staff_activities';
 
 export async function logStaffActivity({
   staffId,
