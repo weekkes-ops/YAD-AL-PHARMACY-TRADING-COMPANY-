@@ -214,7 +214,7 @@ export function Footer({
           <div className="flex items-center gap-4 text-[11px]">
             <span>Licensed Dispensary &amp; Trading</span>
             <span>&bull;</span>
-            <span>29 Wilberforce Street, Freetown</span>
+            <span>22 Sussex Peninsular Road, Freetown</span>
             <span>&bull;</span>
             <span className="text-emerald-400">Health &amp; Wellness Partner</span>
           </div>

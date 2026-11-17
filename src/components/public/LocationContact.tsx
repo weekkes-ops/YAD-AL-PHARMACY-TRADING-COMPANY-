@@ -28,7 +28,7 @@ export function LocationContact() {
             Our Freetown Dispensary &amp; Trading Center
           </h2>
           <p className="text-sm sm:text-base text-gray-600">
-            Conveniently situated at {PHARMACY_CONFIG.address} in central Freetown to serve patients, wholesale partners, and clinics across Sierra Leone.
+            Conveniently situated at {PHARMACY_CONFIG.address} along the Freetown Peninsula to serve patients, wholesale partners, and clinics across Sierra Leone.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export function LocationContact() {
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Physical Address</span>
                   <h3 className="text-lg font-black text-gray-900 mt-0.5">{PHARMACY_CONFIG.address}</h3>
                   <p className="text-xs text-gray-500 mt-1">
-                    Central Freetown, Sierra Leone (29 Wilberforce Street business &amp; commercial district)
+                    Sussex, Freetown, Sierra Leone (22 Sussex Peninsular Road)
                   </p>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export function LocationContact() {
                   <div className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-emerald-300 text-xs font-bold border border-white/20">
                     Freetown, Sierra Leone
                   </div>
-                  <span className="text-[11px] text-gray-300 font-mono">GPS: 8.4844° N, 13.2344° W</span>
+                  <span className="text-[11px] text-gray-300 font-mono">GPS: 8.3474° N, 13.2198° W</span>
                 </div>
 
                 <div className="relative z-10 flex items-center gap-4 bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10">
@@ -151,7 +151,7 @@ export function LocationContact() {
                 <div className="relative z-10 flex items-center justify-between text-xs text-gray-300">
                   <span>Accessible via Car, Taxi &amp; Commercial Transit</span>
                   <a
-                    href="https://maps.google.com/?q=29+Wilberforce+Street+Freetown+Sierra+Leone"
+                    href="https://maps.google.com/?q=22+Sussex+Peninsular+Road+Freetown+Sierra+Leone"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-emerald-300 hover:text-white font-bold transition-colors"

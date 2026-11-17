@@ -104,7 +104,7 @@ export function Navbar({
               </span>
             </div>
             <span className="text-xs text-gray-500 font-medium hidden sm:block">
-              29 Wilberforce Street &bull; Tel: {PHARMACY_CONFIG.phoneDisplay}
+              22 Sussex Peninsular Road &bull; Tel: {PHARMACY_CONFIG.phoneDisplay}
             </span>
           </div>
         </div>

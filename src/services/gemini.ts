@@ -17,7 +17,7 @@ export async function getConsultationResponse(messages: { role: 'user' | 'assist
   const model = "gemini-3-flash-preview";
   const ai = getAI();
   
-  const systemInstruction = `You are a helpful and professional health consultant for SUSSEX PHARMCY Freetown Sierra Leone, located at 29 Wilberforce Street, Freetown, Sierra Leone (Telephone: 078386123 / 033327227). 
+  const systemInstruction = `You are a helpful and professional health consultant for SUSSEX PHARMCY Freetown Sierra Leone, located at 22 Sussex Peninsular Road, Freetown, Sierra Leone (Telephone: 078386123 / 033327227). 
   Your goal is to provide basic health advice, explain over-the-counter medications, and help users understand their symptoms.
   
   CRITICAL GUIDELINES:

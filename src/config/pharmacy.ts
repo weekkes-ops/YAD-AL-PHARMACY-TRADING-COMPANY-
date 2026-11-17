@@ -2,7 +2,7 @@ export const PHARMACY_CONFIG = {
   name: 'SUSSEX PHARMCY Freetown Sierra Leone',
   shortName: 'SUSSEX PHARMCY',
   tagline: 'Freetown\'s Trusted Clinical Pharmacy & Healthcare Management Partner',
-  address: '29 Wilberforce Street, Freetown',
+  address: '22 Sussex Peninsular Road, Freetown',
   city: 'Freetown',
   district: 'Western Area Urban',
   country: 'Sierra Leone',
@@ -48,7 +48,7 @@ export const PHARMACY_CONFIG = {
     {
       id: 'diagnostics',
       title: 'Clinical Health Screenings',
-      description: 'Walk-in blood pressure monitoring, blood sugar checks, BMI calculation, and pulse oximetry at 29 Wilberforce Street.',
+      description: 'Walk-in blood pressure monitoring, blood sugar checks, BMI calculation, and pulse oximetry at 22 Sussex Peninsular Road.',
       icon: 'Stethoscope'
     },
     {

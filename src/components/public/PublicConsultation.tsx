@@ -26,7 +26,7 @@ export function PublicConsultation({ onOpenBooking }: PublicConsultationProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `Hello! I am your **${PHARMACY_CONFIG.name} AI Clinical Assistant** here at 29 Wilberforce Street, Freetown, Sierra Leone.\n\nI can help you understand your symptoms, explain medication dosages and over-the-counter options, or check drug interactions. How may I assist your health today?`,
+      content: `Hello! I am your **${PHARMACY_CONFIG.name} AI Clinical Assistant** here at 22 Sussex Peninsular Road, Freetown, Sierra Leone.\n\nI can help you understand your symptoms, explain medication dosages and over-the-counter options, or check drug interactions. How may I assist your health today?`,
       timestamp: new Date().toISOString(),
     },
   ]);
