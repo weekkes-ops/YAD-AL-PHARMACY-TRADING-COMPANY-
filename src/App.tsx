@@ -8,57 +8,32 @@ import { Consultation } from './components/Consultation';
 import { Customers } from './components/Customers';
 import { StaffManagement } from './components/Staff';
 import { PharmacyLogo } from './components/PharmacyLogo';
-import { PublicWebsite } from './components/public/PublicWebsite';
 import { StaffRole } from './types';
 import { 
   ShieldAlert, 
   MapPin, 
   Phone, 
   ChevronRight,
-  Copy,
-  Check,
   KeyRound,
   ShieldCheck,
-  UserCheck,
-  Sparkles,
-  ArrowRight,
-  Globe,
-  ArrowLeft,
-  LayoutDashboard
+  UserCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PHARMACY_CONFIG } from './config/pharmacy';
 
-function Header({ 
-  activeTab, 
-  onSwitchToPublic 
-}: { 
-  activeTab: string; 
-  onSwitchToPublic: () => void;
-}) {
+function Header({ activeTab }: { activeTab: string }) {
   return (
     <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 sm:px-8">
       <div className="flex items-center space-x-2 text-sm">
-        <span className="text-gray-400 capitalize">SUSSEX PHARMCY Management</span>
+        <span className="text-gray-400">SUSSEX PHARMCY MIS</span>
         <ChevronRight size={14} className="text-gray-300" />
         <span className="font-bold text-gray-900 capitalize">{activeTab}</span>
       </div>
 
       <div className="flex items-center space-x-4 sm:space-x-6 text-sm font-medium">
-        {/* Switch back to Public Website Button */}
-        <button
-          onClick={onSwitchToPublic}
-          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-bold transition-all cursor-pointer shadow-xs"
-          title="View Live Public Pharmacy Website"
-        >
-          <Globe size={13} className="text-emerald-600" />
-          <span className="hidden sm:inline">View Public Website</span>
-          <span className="sm:hidden">Website</span>
-        </button>
-
         <div className="hidden lg:flex items-center text-gray-500 space-x-1.5" title={PHARMACY_CONFIG.address}>
           <MapPin size={15} className="text-emerald-500 shrink-0" />
-          <span className="truncate max-w-[180px]">{PHARMACY_CONFIG.address}</span>
+          <span className="truncate max-w-[220px]">{PHARMACY_CONFIG.address}</span>
         </div>
 
         <div className="hidden md:block w-px h-4 bg-gray-200" />
@@ -81,8 +56,17 @@ function Header({
 
 function Main() {
   const { user, staff, loading, login, loginAsStaff, signOut } = useAuth();
-  const [viewMode, setViewMode] = useState<'public' | 'portal'>('public');
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [authError, setAuthError] = useState<string | null>(null);
+
+  const handleGoogleLogin = async () => {
+    setAuthError(null);
+    try {
+      await login();
+    } catch (err: any) {
+      setAuthError(err?.message || 'Google sign-in failed. Please use 1-click staff access below.');
+    }
+  };
 
   if (loading) {
     return (
@@ -90,25 +74,14 @@ function Main() {
         <div className="flex flex-col items-center space-y-4">
           <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin" />
           <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-            Loading SUSSEX PHARMCY Freetown Sierra Leone...
+            Loading SUSSEX PHARMCY Freetown Sierra Leone MIS...
           </p>
         </div>
       </div>
     );
   }
 
-  // If in Public view mode, show the stunning modern website
-  if (viewMode === 'public') {
-    return (
-      <PublicWebsite
-        onOpenPortal={() => {
-          setViewMode('portal');
-        }}
-      />
-    );
-  }
-
-  // If in Portal view mode but not logged in, render the login screen with a button to return to public website
+  // MIS Login Screen when not authenticated
   if (!user) {
     return (
       <div className="min-h-screen bg-[#0f1117] text-white flex flex-col justify-center items-center p-4 sm:p-6 relative overflow-hidden">
@@ -117,15 +90,11 @@ function Main() {
 
         <div className="w-full max-w-lg bg-[#181b24] border border-gray-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative z-10">
           <div className="flex items-center justify-between mb-4">
-            <button
-              onClick={() => setViewMode('public')}
-              className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-emerald-400 font-semibold transition-colors cursor-pointer"
-            >
-              <ArrowLeft size={14} />
-              <span>Back to Public Website</span>
-            </button>
-            <span className="px-2 py-0.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold">
-              Staff Portal
+            <span className="text-[11px] text-gray-400 font-mono">
+              {PHARMACY_CONFIG.address} &bull; {PHARMACY_CONFIG.phoneDisplay}
+            </span>
+            <span className="px-2.5 py-0.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold">
+              Pharmacy MIS
             </span>
           </div>
 
@@ -134,15 +103,22 @@ function Main() {
             <div>
               <h1 className="text-2xl font-black tracking-tight text-white">{PHARMACY_CONFIG.name}</h1>
               <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mt-1">
-                Pharmacy &amp; System Management
+                Management Information System (MIS)
               </p>
             </div>
           </div>
 
+          {authError && (
+            <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex items-start gap-2">
+              <ShieldAlert size={15} className="shrink-0 mt-0.5" />
+              <span>{authError}</span>
+            </div>
+          )}
+
           {/* 1-Click Role Presets */}
           <div className="space-y-4">
             <div className="text-xs text-gray-400 font-medium">
-              Select a staff profile to sign into the dispensary system:
+              Select a staff profile to sign into the MIS:
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -197,8 +173,8 @@ function Main() {
 
             <div className="pt-2">
               <button
-                onClick={login}
-                className="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-gray-800 border border-gray-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2"
+                onClick={handleGoogleLogin}
+                className="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-gray-800 border border-gray-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <KeyRound size={14} className="text-emerald-400" />
                 <span>Or Sign in with Google Account</span>
@@ -208,7 +184,7 @@ function Main() {
 
           <div className="mt-6 pt-5 border-t border-gray-800 text-center text-xs text-gray-500 flex items-center justify-center gap-1.5">
             <ShieldCheck size={13} className="text-emerald-500" />
-            <span>Authorized Medical &amp; Clinical Personnel Only</span>
+            <span>Authorized Pharmacy &amp; Clinical Personnel Only</span>
           </div>
         </div>
       </div>
@@ -227,38 +203,26 @@ function Main() {
           <p className="text-sm text-gray-400 mb-6 leading-relaxed">
             Welcome, <strong className="text-white">{staff.name || user.email}</strong>. Your staff registration has been received and is waiting for administrator approval.
           </p>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setViewMode('public')}
-              className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-sm font-semibold text-white transition-colors"
-            >
-              Public Website
-            </button>
-            <button
-              onClick={() => signOut()}
-              className="flex-1 py-3 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-300 transition-colors"
-            >
-              Sign Out
-            </button>
-          </div>
+          <button
+            onClick={() => signOut()}
+            className="w-full py-3 px-4 rounded-xl bg-gray-800 hover:bg-gray-700 text-sm font-semibold text-gray-300 transition-colors"
+          >
+            Sign Out
+          </button>
         </div>
       </div>
     );
   }
 
-  // Authenticated Staff Dashboard View
+  // Authenticated Staff MIS View
   return (
     <div className="flex h-screen bg-[#fafafa] overflow-hidden">
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab}
-        onSwitchToPublic={() => setViewMode('public')}
       />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Header 
-          activeTab={activeTab} 
-          onSwitchToPublic={() => setViewMode('public')}
-        />
+        <Header activeTab={activeTab} />
         <main className="flex-1 overflow-y-auto p-4 sm:p-8">
           <AnimatePresence mode="wait">
             <motion.div

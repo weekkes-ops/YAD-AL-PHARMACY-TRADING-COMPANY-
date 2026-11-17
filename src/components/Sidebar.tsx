@@ -21,10 +21,9 @@ import { PharmacyLogo } from './PharmacyLogo';
 interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  onSwitchToPublic?: () => void;
 }
 
-export function Sidebar({ activeTab, setActiveTab, onSwitchToPublic }: SidebarProps) {
+export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   const { staff, signOut } = useAuth();
   const [isOpen, setIsOpen] = useState(true);
 
@@ -102,19 +101,6 @@ export function Sidebar({ activeTab, setActiveTab, onSwitchToPublic }: SidebarPr
           </button>
         ))}
       </nav>
-
-      {onSwitchToPublic && (
-        <div className="px-4 mb-3">
-          <button
-            onClick={onSwitchToPublic}
-            className="w-full flex items-center p-2.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/30 text-emerald-400 transition-all text-xs font-semibold"
-            title="Switch to Public Website"
-          >
-            <span className="text-base mr-2">🌐</span>
-            {isOpen && <span>View Public Site</span>}
-          </button>
-        </div>
-      )}
 
       <div className="p-4 border-t border-[#333] mb-2">
         {isOpen ? (
